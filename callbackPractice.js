@@ -22,7 +22,7 @@ and what you should write is the sayHi function that makes the code above work,
 
 */
 
-
+//Code Here for first
 
 function first(arr, cb) {
   cb(arr[0]);
@@ -38,7 +38,7 @@ first(names, function(firstName){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-
+//Code Here for last
 
 function last(arr, cb) {
   cb(arr[arr.length - 1]) ;
@@ -55,6 +55,7 @@ last(names, function(lastName){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+//Code Here for multiply
 
 function multiply(num1, num2, cb) {
   cb(num1 * num2);
@@ -72,6 +73,7 @@ multiply(4, 3, function(answer){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+//Code Here for contains
 
 function contains(arr, name, cb) {
   var result = false;
@@ -103,6 +105,16 @@ contains(names, 'Colt', function(result){
 
     //Code Here for uniq
 
+    function uniq(arr, cb) {
+      for (var i = 0; i < arr.length; i++) {
+        if (arr.lastIndexOf(arr[i]) != i) {
+          arr.splice(i, 1);
+          i--;
+        }
+      }
+      return cb(arr);
+    }
+
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
@@ -117,6 +129,12 @@ uniq(names, function(uniqArr){
 
 
     //Code Here for each
+
+    function each(arr, cb) {
+      for (var i = 0; i < arr.length; i++) {
+        cb(arr[i], i);
+      }
+    }
 
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -133,6 +151,14 @@ each(names, function(item, indice){
 
 
  //code here for getUserById
+
+ function getUserById(arr, id, cb) {
+   for (var i = 0; i < arr.length; i++) {
+     if(arr[i].id === id) {
+      cb(arr[i]);
+     }
+   }
+ }
 
 var users = [
   {
